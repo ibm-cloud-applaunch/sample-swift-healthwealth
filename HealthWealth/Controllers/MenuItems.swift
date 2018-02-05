@@ -19,7 +19,6 @@ internal class MenuItems:NSObject  {
     static var normalMenu:[String] = [
         "About My Doctor",
         "Nearest Hospitals",
-        "Prescriptions",
         "My Medicines",
         "First Aid Guide",
         "Daily Dose",
@@ -51,6 +50,10 @@ internal class MenuItems:NSObject  {
         normalMenu.insert(name, at: 5)
     }
     
+    class func addPrescriptionFeature(name: String) {
+        normalMenu.insert(name, at: 3)
+    }
+    
     class func changeBackgroundColor(color: String) {
         self.backgroundColor = hexStringToUIColor(color)
     }
@@ -64,7 +67,6 @@ internal class MenuItems:NSObject  {
         normalMenu = [
             "About My Doctor",
             "Nearest Hospitals",
-            "Prescriptions",
             "My Medicines",
             "First Aid Guide",
             "Daily Dose",

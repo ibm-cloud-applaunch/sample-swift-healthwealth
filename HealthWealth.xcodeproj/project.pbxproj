@@ -15,6 +15,9 @@
 		C75E995A200DEEB50065A76C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E9959200DEEB50065A76C /* LoginViewController.swift */; };
 		C75E995D200DEEB50065A76C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75E995B200DEEB50065A76C /* Main.storyboard */; };
 		C75E9962200DEEB50065A76C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75E9960200DEEB50065A76C /* LaunchScreen.storyboard */; };
+		C78420FC202856EB00E26519 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78420FB202856EB00E26519 /* MapViewController.swift */; };
+		C78420FE202856FC00E26519 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78420FD202856FC00E26519 /* FormViewController.swift */; };
+		C78421002028574100E26519 /* PrescriptionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78420FF2028574100E26519 /* PrescriptionTableViewController.swift */; };
 		C7934E5C200F22E1005892EE /* TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7934E5B200F22E1005892EE /* TokenStorage.swift */; };
 		C7934E622010798E005892EE /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7934E602010798D005892EE /* CustomOverlayView.xib */; };
 		C7934E6420107999005892EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7934E6320107999005892EE /* Images.xcassets */; };
@@ -38,6 +41,9 @@
 		C75E995C200DEEB50065A76C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C75E9961200DEEB50065A76C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C75E9963200DEEB50065A76C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C78420FB202856EB00E26519 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		C78420FD202856FC00E26519 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		C78420FF2028574100E26519 /* PrescriptionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionTableViewController.swift; sourceTree = "<group>"; };
 		C7934E5B200F22E1005892EE /* TokenStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenStorage.swift; sourceTree = "<group>"; };
 		C7934E602010798D005892EE /* CustomOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlayView.xib; sourceTree = "<group>"; };
 		C7934E6320107999005892EE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -93,22 +99,41 @@
 		C75E9956200DEEB50065A76C /* HealthWealth */ = {
 			isa = PBXGroup;
 			children = (
-				C7CBF7282010F8F50064FAF2 /* KolodaView */,
+				C78420F82028566D00E26519 /* Controllers */,
+				C78420F72028564500E26519 /* Views */,
 				C75E9957200DEEB50065A76C /* AppDelegate.swift */,
-				C7F9861E2018696600707E78 /* AppLaunchAdapter.swift */,
-				C759A2EF2013C049001E1C60 /* DashBoardViewController.swift */,
-				C759A2F120146B71001E1C60 /* DashBoardTableViewCell.swift */,
-				C7CBF7262010C8FA0064FAF2 /* CloundantAdapter.swift */,
-				C75E9959200DEEB50065A76C /* LoginViewController.swift */,
-				C7934E5B200F22E1005892EE /* TokenStorage.swift */,
-				C7DDD6672015D7FF00521C7A /* CameraViewController.swift */,
-				C719736A20185BED00B8CBA2 /* MenuItems.swift */,
 				C75E995B200DEEB50065A76C /* Main.storyboard */,
 				C75E9960200DEEB50065A76C /* LaunchScreen.storyboard */,
 				C75E9963200DEEB50065A76C /* Info.plist */,
 				C7934E6320107999005892EE /* Images.xcassets */,
 			);
 			path = HealthWealth;
+			sourceTree = "<group>";
+		};
+		C78420F72028564500E26519 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C7CBF7282010F8F50064FAF2 /* KolodaView */,
+				C759A2EF2013C049001E1C60 /* DashBoardViewController.swift */,
+				C759A2F120146B71001E1C60 /* DashBoardTableViewCell.swift */,
+				C75E9959200DEEB50065A76C /* LoginViewController.swift */,
+				C7DDD6672015D7FF00521C7A /* CameraViewController.swift */,
+				C78420FB202856EB00E26519 /* MapViewController.swift */,
+				C78420FD202856FC00E26519 /* FormViewController.swift */,
+				C78420FF2028574100E26519 /* PrescriptionTableViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C78420F82028566D00E26519 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C7F9861E2018696600707E78 /* AppLaunchAdapter.swift */,
+				C7CBF7262010C8FA0064FAF2 /* CloundantAdapter.swift */,
+				C7934E5B200F22E1005892EE /* TokenStorage.swift */,
+				C719736A20185BED00B8CBA2 /* MenuItems.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		C7CBF7282010F8F50064FAF2 /* KolodaView */ = {
@@ -283,13 +308,16 @@
 				C7CBF7272010C8FA0064FAF2 /* CloundantAdapter.swift in Sources */,
 				C7934E6A20107C5C005892EE /* CustomOverlayView.swift in Sources */,
 				C7F9861F2018696600707E78 /* AppLaunchAdapter.swift in Sources */,
+				C78420FE202856FC00E26519 /* FormViewController.swift in Sources */,
 				C75E995A200DEEB50065A76C /* LoginViewController.swift in Sources */,
 				C7DDD6682015D7FF00521C7A /* CameraViewController.swift in Sources */,
 				C719736B20185BED00B8CBA2 /* MenuItems.swift in Sources */,
+				C78421002028574100E26519 /* PrescriptionTableViewController.swift in Sources */,
 				C7934E6620107BEE005892EE /* BackgroundAnimationViewController.swift in Sources */,
 				C759A2F02013C049001E1C60 /* DashBoardViewController.swift in Sources */,
 				C75E9958200DEEB50065A76C /* AppDelegate.swift in Sources */,
 				C759A2F220146B71001E1C60 /* DashBoardTableViewCell.swift in Sources */,
+				C78420FC202856EB00E26519 /* MapViewController.swift in Sources */,
 				C7934E5C200F22E1005892EE /* TokenStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

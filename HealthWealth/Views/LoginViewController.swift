@@ -117,6 +117,10 @@ class LoginViewController: UIViewController, NVActivityIndicatorViewable {
         if(AppLaunchAdapter.sharedInstance.isSubmissionMenuEnabled() && MenuItems.isDoctorFlagEnabled) {
             MenuItems.addReviewFeature(name: AppLaunchAdapter.sharedInstance.getSubmissionMenuName())
         }
+        // Check whether Prescription Menu is enabled
+        if(AppLaunchAdapter.sharedInstance.isPrescriptionMenuEnabled()) {
+            MenuItems.addPrescriptionFeature(name: "Prescriptions")
+        }
         // Update Background Color
         if(AppLaunchAdapter.sharedInstance.isBackgroundColorChanged()) {
             MenuItems.changeBackgroundColor(color: AppLaunchAdapter.sharedInstance.getBackGroundColor())

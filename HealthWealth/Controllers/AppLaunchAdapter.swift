@@ -16,12 +16,12 @@ internal class AppLaunchAdapter {
     internal func initialize(username: String, userType: String, completionHandler: @escaping AppLaunchCompletionHandler) {
         let config = AppLaunchConfig.Builder().fetchPolicy(.REFRESH_ON_EVERY_START).cacheExpiration(1).eventFlushInterval(100).build()
         let user = AppLaunchUser.Builder(userId: username).custom(key: "type", value: userType).build()
-        AppLaunch.sharedInstance.initialize(region: .US_SOUTH, appId: "48fdee1d-3261-469b-bddc-bc8d4e6aa7b7", clientSecret: "c4591d8f-ca5d-4158-9e36-5702eb40310a", config: config, user: user, completionHandler: completionHandler)
+        AppLaunch.sharedInstance.initialize(region: .US_SOUTH, appId: "e5fa93b0-4d0a-4e17-bc91-1189091a9341", clientSecret: "e58862fb-9074-4506-a16d-333c3ab5fabb", config: config, user: user, completionHandler: completionHandler)
     }
     
     internal func isOnlineEyeTestMenuEnabled() -> Bool {
         do {
-            return try AppLaunch.sharedInstance.isFeatureEnabled(featureCode: "_5otjezpky")
+            return try AppLaunch.sharedInstance.isFeatureEnabled(featureCode: "_l9bblng5t")
         } catch {
             return false
         }
@@ -29,7 +29,7 @@ internal class AppLaunchAdapter {
     
     internal func getOnlineEyeTestMenuName() -> String {
         do {
-            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_5otjezpky", propertyCode: "_0qa7zj374")
+            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_l9bblng5t", propertyCode: "_itchy2x3m")
         } catch {
             return "sd"
         }
@@ -37,7 +37,7 @@ internal class AppLaunchAdapter {
     
     internal func isSubmissionMenuEnabled() -> Bool {
         do {
-            return try AppLaunch.sharedInstance.isFeatureEnabled(featureCode: "_gj705ri9d")
+            return try AppLaunch.sharedInstance.isFeatureEnabled(featureCode: "_fffs55wd9")
         } catch {
             return false
         }
@@ -45,15 +45,31 @@ internal class AppLaunchAdapter {
     
     internal func getSubmissionMenuName() -> String {
         do {
-            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_gj705ri9d", propertyCode: "_l4pwv1wtn")
+            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_fffs55wd9", propertyCode: "_32t5jp929")
         } catch {
             return "sd"
         }
     }
     
+    internal func isPrescriptionMenuEnabled() -> Bool {
+        do {
+            return try AppLaunch.sharedInstance.isFeatureEnabled(featureCode: "_5gavnnrf5")
+        } catch {
+            return false
+        }
+    }
+    
+    internal func getPrescriptionMenuType() -> String {
+        do {
+            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_5gavnnrf5", propertyCode: "_pqec8f33u")
+        } catch {
+            return ""
+        }
+    }
+    
     internal func isBackgroundColorChanged() -> Bool {
         do {
-            return try AppLaunch.sharedInstance.isFeatureEnabled(featureCode: "_6deefh571")
+            return try AppLaunch.sharedInstance.isFeatureEnabled(featureCode: "_u6tm9txnw")
         } catch {
             return false
         }
@@ -61,7 +77,7 @@ internal class AppLaunchAdapter {
     
     internal func getBackGroundColor() -> String {
         do {
-            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_6deefh571", propertyCode: "_g2kgxscod")
+            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_u6tm9txnw", propertyCode: "_x2ctz0pha")
         } catch {
             return "#FEC058"
         }

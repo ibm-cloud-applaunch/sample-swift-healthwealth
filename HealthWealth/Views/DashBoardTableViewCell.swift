@@ -27,6 +27,4 @@ class DashBoardTableViewCell: UITableViewCell, UINavigationControllerDelegate, U
         // Configure the view for the selected state
     }
     
-    
-    
 }
