@@ -565,6 +565,9 @@ Instructions to capture image :
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="M81-xg-Pun"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="vC3-em-Ih2" id="ekW-eG-mxt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9bn-em-wyI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -573,7 +576,6 @@ Instructions to capture image :
         <!--FormView-->
         <scene sceneID="oLW-kd-1tk">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5cW-Xs-38m" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="FormView" title="Home Delivery" id="0fe-kh-XkP" userLabel="FormView" customClass="FormViewController" customModule="HealthWealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="capture" id="srg-PB-XKd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -689,6 +691,7 @@ Instructions to capture image :
                         <viewLayoutGuide key="safeArea" id="w78-2y-Iay"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5cW-Xs-38m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3022" y="636"/>
         </scene>
