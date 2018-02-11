@@ -49,7 +49,7 @@ The repository contains both the mobile application and the Cloud Functions acti
 
 - Checkout the code from the GitHub repository
 
- `git clone https://github.com/IBM-Cloud/serverless-followupapp-ios`
+ 	`https://github.com/ibm-cloud-applaunch/sample-swift-healthwealth.git`
 
 - Review the code structure
 
@@ -97,10 +97,6 @@ With the command line, run the following commands to provision the services and 
 	
 	- `./deploy.sh --update` to update the DB 
 	- `./deploy.sh --uninstall` to delete the DB.
-
-- Clone this repository by running following command in command-line window:
-
-  `git clone https://github.com/ibm-cloud-applaunch/sample-swift-poll.git`
   
 #### Configure and run a native mobile application
 
