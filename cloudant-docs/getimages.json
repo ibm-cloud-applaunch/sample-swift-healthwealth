@@ -1,0 +1,9 @@
+{
+  "_id": "_design/getimages",
+  "views": {
+    "all": {
+      "map": "function (doc) {\n   if (doc._attachments.image) {\n    emit(doc._id, doc._attachments.image);\n  }\n}"
+    }
+  },
+  "language": "javascript"
+}

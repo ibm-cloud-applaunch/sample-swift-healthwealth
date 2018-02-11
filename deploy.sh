@@ -23,26 +23,30 @@ function usage() {
 
 function install() {
   echo "Installing..."
+  echo "Creating database..."
+  curl $CLOUDANT_URL/$PACKAGE_NAME -X PUT
   
-}
+  echo "Inserting database design documents..."
+  # # ignore "document already exists error"
+  curl -s -X POST -H 'Content-Type: application/json' -d @cloudant-docs/doctors.json $CLOUDANT_URL/$PACKAGE_NAME | grep -v conflict
+  curl -s -X POST -H 'Content-Type: application/json' -d @cloudant-docs/getimages.json $CLOUDANT_URL/$PACKAGE_NAME | grep -v conflict
 
-function uninstall() {
-  echo "Uninstalling..."
 }
 
 function update() {
-  echo "Updating actions..."
+  echo "updating..."
+  uninstall
+  install
+}
 
+function uninstall() {
+  echo "Deleting database..."
+  curl $CLOUDANT_URL/$PACKAGE_NAME -X DELETE
 }
 
 function showenv() {
   echo "PACKAGE_NAME=$PACKAGE_NAME"
   echo "CLOUDANT_URL=$CLOUDANT_URL"
-}
-
-function recycle() {
-  uninstall
-  install
 }
 
 case "$1" in

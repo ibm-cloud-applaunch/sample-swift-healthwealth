@@ -1,0 +1,8 @@
+{
+  "_id": "doctors",
+  "vittalpai@ymail.com": "enable",
+  "mail@ivittal.in": "enable",
+  "xyz@ymail.com": "disable",
+  "admin@ymail.com": "disable",
+  "user@gmail.com": "enable"
+}
