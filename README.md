@@ -49,15 +49,15 @@ The repository contains both the mobile application and the Cloud Functions acti
 
 - Checkout the code from the GitHub repository
 
-`git clone https://github.com/IBM-Cloud/serverless-followupapp-ios`
+ `git clone https://github.com/IBM-Cloud/serverless-followupapp-ios`
 
 - Review the code structure
 
-|      Name     |                         Description                         |
-|:-------------:|:-----------------------------------------------------------:|
-| cloudant-docs | Contains database design documents                          |
-| HealthWealth  | Code for the mobile application                             |
-| deploy.sh     | Helper script to install, uninstall, update the cloudant DB |
+	|      Name     |                         Description                         |
+	|:-------------:|:-----------------------------------------------------------:|
+	| cloudant-docs | Contains database design documents                          |
+	| HealthWealth  | Code for the mobile application                             |
+	| deploy.sh     | Helper script to install, uninstall, update the cloudant DB |
 
 #### Provision services from the IBM Cloud catalog
 
@@ -71,19 +71,19 @@ The repository contains both the mobile application and the Cloud Functions acti
 With the command line, run the following commands to provision the services and retrieve their credentials:
 
 - Create [App ID](https://console.bluemix.net/catalog/services/AppID) Service and generate credentials.
-`bx cf create-service AppID "Graduated tier" healthiswealth-appid `
-`bx cf create-service-key healthiswealth-appid for-cli`
-`bx cf service-key healthiswealth-appid for-cli`
+	- `bx cf create-service AppID "Graduated tier" healthiswealth-appid `
+	- `bx cf create-service-key healthiswealth-appid for-cli`
+	- `bx cf service-key healthiswealth-appid for-cli`
 
 - Create [AppLaunch](https://console.bluemix.net/catalog/services/AppLaunch) Service and generate credentials.
-`bx cf create-service AppLaunch "Beta" healthiswealth-applaunch `
-`bx cf create-service-key healthiswealth-applaunch for-cli`
-`bx cf service-key healthiswealth-applaunch for-cli`
+	-  `bx cf create-service AppLaunch "Beta" healthiswealth-applaunch `
+	-  `bx cf create-service-key healthiswealth-applaunch for-cli`
+	-  `bx cf service-key healthiswealth-applaunch for-cli`
 
 - Create [Cloudant NoSQL DB](https://console.bluemix.net/catalog/services/cloudantNoSQLDB) Service and generate credentials.
-`bx cf create-service cloudantNoSQLDB Lite healthiswealth-db`
-`bx cf create-service-key healthiswealth-db for-cli`
-`bx cf service-key healthiswealth-db for-cli`
+	- `bx cf create-service cloudantNoSQLDB Lite healthiswealth-db`
+	- `bx cf create-service-key healthiswealth-db for-cli`
+	- `bx cf service-key healthiswealth-db for-cli`
 
 #### Deploy cloundant database design documents
 
@@ -91,9 +91,10 @@ With the command line, run the following commands to provision the services and 
 
 - Deploy the DB Documents to IBM Cloud Service. `deploy.sh` loads the credentials from local.env to create the Cloudant database and deploy design documents which is later used in the application. Run the following  command from your terminal:
 
- `./deploy.sh --install`
+	 `./deploy.sh --install`
 
 	**Note** : You can also run the following commands:
+	
 	- `./deploy.sh --update` to update the DB 
 	- `./deploy.sh --uninstall` to delete the DB.
 
@@ -103,30 +104,7 @@ With the command line, run the following commands to provision the services and 
   
 #### Configure and run a native mobile application
 
-- From a command-line window, navigate to the project's root folder and run the command:
 
-	 - `pod update` 
-	 - `pod install`  
-
-	This step ensure loads the latest release of AppLaunch SDK into the Application.
-
-- Add the AppLaunch service configurations keys which can be viewed in Settings Section  of AppLaunch Service Console in `LoginViewController.swift`
-
-	```
-	AppLaunch.sharedInstance.initialize(region: .US_SOUTH, appId: "application-ID", clientSecret: "client-Secret", config: config, user: user)
-	```
-	
-	- `application-ID` : App GUID value
-	- `client-Secret` : Client Secret value
-
-- Update various feature/property/metric codes  in `ViewController.swift`. These values can be viewed/downloaded from the JSON file after creating the feature in App Launch Console
-
-	- `AppLaunch.sharedInstance.isFeatureEnabled(featureCode: "_p1ie0h4t3")`
-  - `popUpText = try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_p1ie0h4t3", propertyCode: "_1kbhwoivq")`
-  - `AppLaunch.sharedInstance.sendMetrics(codes: ["_ycc4tikio"])`
- 
-
-- Run the application in the iOS Simulator or physical device using Xcode. Login as a guest/registered user to use Poll feature.
 
  
 ### Learn More
