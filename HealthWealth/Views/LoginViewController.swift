@@ -111,11 +111,11 @@ class LoginViewController: UIViewController, NVActivityIndicatorViewable {
     internal func checkForEnabledFeatures(_ completionHandler:@escaping ((Bool) -> Void)) {
         // Check whether online eye test menu enabled
         if(AppLaunchAdapter.sharedInstance.isOnlineEyeTestMenuEnabled()) {
-            MenuItems.addOnlineEyeTestFeature(name: AppLaunchAdapter.sharedInstance.getOnlineEyeTestMenuName())
+            MenuItems.addOnlineEyeTestFeature(name: AppLaunchAdapter.sharedInstance.getOnlineEyeTestMenuTitle())
         }
         // Check whether Submission Menu is enabled
         if(AppLaunchAdapter.sharedInstance.isSubmissionMenuEnabled() && MenuItems.isDoctorFlagEnabled) {
-            MenuItems.addReviewFeature(name: AppLaunchAdapter.sharedInstance.getSubmissionMenuName())
+            MenuItems.addReviewFeature(name: AppLaunchAdapter.sharedInstance.getSubmissionMenuTitle())
         }
         // Check whether Prescription Menu is enabled
         if(AppLaunchAdapter.sharedInstance.isPrescriptionMenuEnabled()) {

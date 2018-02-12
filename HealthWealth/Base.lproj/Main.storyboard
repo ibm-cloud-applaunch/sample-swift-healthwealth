@@ -379,6 +379,10 @@ Instructions to capture image :
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ich-db-ebm"/>
                     </view>
+                    <connections>
+                        <outlet property="banner" destination="Xg8-TS-4u0" id="dDV-su-dP8"/>
+                        <outlet property="captureButton" destination="KvC-DP-nHK" id="UO7-1b-K5g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ONb-4w-EcT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

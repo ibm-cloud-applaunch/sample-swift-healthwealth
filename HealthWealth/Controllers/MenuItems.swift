@@ -13,6 +13,7 @@ internal class MenuItems:NSObject  {
     
     static var isDoctorFlagEnabled: Bool = false
     static var onlineEyeTestFeatureName: String = "Online Eye Checkup"
+    static var prescriptionFeatureName: String = "Prescriptions"
     static var reviewSubmissionsFeatureName: String = "Review Submissions"
     static var backgroundColor: UIColor =  hexStringToUIColor("#FEC058")
     
@@ -51,6 +52,7 @@ internal class MenuItems:NSObject  {
     }
     
     class func addPrescriptionFeature(name: String) {
+        prescriptionFeatureName = name
         normalMenu.insert(name, at: 3)
     }
     
@@ -106,7 +108,7 @@ internal class MenuItems:NSObject  {
         switch menu {
         case "Nearest Hospitals":
             return "Hospital"
-        case "Prescriptions":
+        case prescriptionFeatureName:
             return "Prescriptions"
         case "My Medicines":
             return "Medicines"

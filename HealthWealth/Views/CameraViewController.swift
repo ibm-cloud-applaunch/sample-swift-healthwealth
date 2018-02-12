@@ -11,11 +11,16 @@ import NVActivityIndicatorView
 
 class CameraViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, NVActivityIndicatorViewable {
     
+    @IBOutlet weak var banner: UILabel!
+    @IBOutlet weak var captureButton: UIButton!
     var imagePicker: UIImagePickerController!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = MenuItems.backgroundColor
+        self.banner.text = AppLaunchAdapter.sharedInstance.getOnlineEyeTestMenuHeader()
+        self.captureButton.setTitle(AppLaunchAdapter.sharedInstance.getOnlineEyeTestButtonTitle(), for: .normal)
     }
     
     override func didReceiveMemoryWarning() {

@@ -29,7 +29,7 @@ class PrescriptionTableViewController: UITableViewController {
         if (indexPath.row == 1) {
             if (AppLaunchAdapter.sharedInstance.isPrescriptionMenuEnabled()) {
                 let menuType = AppLaunchAdapter.sharedInstance.getPrescriptionMenuType()
-                if (menuType == "MapView") {
+                if (menuType != "MapView") {
                     performSegue(withIdentifier: "mapNavigation", sender: self)
                 } else {
                     performSegue(withIdentifier: "formNavigation", sender: self)

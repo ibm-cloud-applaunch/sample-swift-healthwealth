@@ -35,12 +35,12 @@ class BackgroundAnimationViewController: UIViewController {
     
     //MARK: IBActions
     @IBAction func leftButtonTapped() {
-        AppLaunchAdapter.sharedInstance.sendMetrics(value: "_xc0pn6ajm")
+        AppLaunchAdapter.sharedInstance.sendSubmissionMenuNegativeMetric()
         SwipeView?.swipe(.left)
     }
     
     @IBAction func rightButtonTapped() {
-        AppLaunchAdapter.sharedInstance.sendMetrics(value: "_53yw525uf")
+        AppLaunchAdapter.sharedInstance.sendSubmissionMenuPostiveMetric()
         SwipeView?.swipe(.right)
     }
     

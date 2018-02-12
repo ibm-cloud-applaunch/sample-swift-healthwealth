@@ -44,13 +44,13 @@ class DashBoardViewController: UITableViewController, NVActivityIndicatorViewabl
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if(MenuItems.getMenuItems()[indexPath.row] == "Online Eye Checkup") {
-             AppLaunchAdapter.sharedInstance.sendMetrics(value: "_d2eqdhfu1")
+        if(MenuItems.getMenuItems()[indexPath.row] == AppLaunchAdapter.sharedInstance.getOnlineEyeTestMenuTitle()) {
+            AppLaunchAdapter.sharedInstance.sendOnlineEyeTestMetric()
             performSegue(withIdentifier: "examineEye", sender: self)
-        }else if(MenuItems.getMenuItems()[indexPath.row] == "Prescriptions") {
-            AppLaunchAdapter.sharedInstance.sendMetrics(value: "_fo8rt25n0")
+        }else if(MenuItems.getMenuItems()[indexPath.row] == AppLaunchAdapter.sharedInstance.getPrescriptionMenuTitle()) {
+            AppLaunchAdapter.sharedInstance.sendPrescriptionMenuMetric()
             performSegue(withIdentifier: "navigatePrescriptions", sender: self)
-        } else if (MenuItems.getMenuItems()[indexPath.row] == "Review Submissions") {
+        } else if (MenuItems.getMenuItems()[indexPath.row] == AppLaunchAdapter.sharedInstance.getSubmissionMenuTitle()) {
             if (CloudantAdapter.sharedInstance.images.count != 0) {
                 performSegue(withIdentifier: "submissions", sender: self)
             } else {

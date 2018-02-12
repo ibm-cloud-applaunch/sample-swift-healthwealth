@@ -27,12 +27,32 @@ internal class AppLaunchAdapter {
         }
     }
     
-    internal func getOnlineEyeTestMenuName() -> String {
+    internal func getOnlineEyeTestMenuTitle() -> String {
         do {
             return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_l9bblng5t", propertyCode: "_itchy2x3m")
         } catch {
-            return "sd"
+            return ""
         }
+    }
+    
+    internal func getOnlineEyeTestMenuHeader() -> String {
+        do {
+            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_l9bblng5t", propertyCode: "_itchy2x3m")
+        } catch {
+            return ""
+        }
+    }
+    
+    internal func getOnlineEyeTestButtonTitle() -> String {
+        do {
+            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_l9bblng5t", propertyCode: "_itchy2x3m")
+        } catch {
+            return ""
+        }
+    }
+    
+    internal func sendOnlineEyeTestMetric() {
+        AppLaunchAdapter.sharedInstance.sendMetrics(value: "_d2eqdhfu1")
     }
     
     internal func isSubmissionMenuEnabled() -> Bool {
@@ -43,12 +63,20 @@ internal class AppLaunchAdapter {
         }
     }
     
-    internal func getSubmissionMenuName() -> String {
+    internal func getSubmissionMenuTitle() -> String {
         do {
             return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_fffs55wd9", propertyCode: "_32t5jp929")
         } catch {
-            return "sd"
+            return ""
         }
+    }
+    
+    internal func sendSubmissionMenuPostiveMetric() {
+        AppLaunchAdapter.sharedInstance.sendMetrics(value: "_d2eqdhfu1")
+    }
+    
+    internal func sendSubmissionMenuNegativeMetric() {
+        AppLaunchAdapter.sharedInstance.sendMetrics(value: "_d2eqdhfu1")
     }
     
     internal func isPrescriptionMenuEnabled() -> Bool {
@@ -59,12 +87,24 @@ internal class AppLaunchAdapter {
         }
     }
     
+    internal func getPrescriptionMenuTitle() -> String {
+        do {
+            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_5gavnnrf5", propertyCode: "_pqec8f33u")
+        } catch {
+            return ""
+        }
+    }
+    
     internal func getPrescriptionMenuType() -> String {
         do {
             return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_5gavnnrf5", propertyCode: "_pqec8f33u")
         } catch {
             return ""
         }
+    }
+    
+    internal func sendPrescriptionMenuMetric() {
+        AppLaunchAdapter.sharedInstance.sendMetrics(value: "_d2eqdhfu1")
     }
     
     internal func isBackgroundColorChanged() -> Bool {
@@ -98,7 +138,6 @@ internal class AppLaunchAdapter {
             
         }
     }
-    
     
     internal func destroy() {
         AppLaunch.sharedInstance.destroy { (Success, Failure) in
