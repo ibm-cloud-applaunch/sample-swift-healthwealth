@@ -16,17 +16,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
+    var backendGUID: String?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        if let contents = Bundle.main.path(forResource:"ICCredentials", ofType: "plist"), let dictionary = NSDictionary(contentsOfFile: contents) {
+            self.backendGUID = dictionary["appIDauthTenantId"] as? String
+        }
         // Override point for customization after application launch.
         let region = AppID.REGION_UK
         let bmsclient = BMSClient.sharedInstance
-        let backendGUID = "526f39b5-7dfb-4db9-ad26-3e10af256e00"
         bmsclient.initialize(bluemixRegion: region)
         let appid = AppID.sharedInstance
-        appid.initialize(tenantId: backendGUID, bluemixRegion: region)
+        appid.initialize(tenantId: self.backendGUID!, bluemixRegion: region)
         let appIdAuthorizationManager = AppIDAuthorizationManager(appid:appid)
         bmsclient.authorizationManager = appIdAuthorizationManager
         TokenStorageManager.sharedInstance.initialize(tenantId: backendGUID)

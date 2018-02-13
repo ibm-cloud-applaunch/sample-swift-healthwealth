@@ -69,8 +69,9 @@ class DashBoardViewController: UITableViewController, NVActivityIndicatorViewabl
    
     @IBAction func logout(_ sender: Any) {
         MenuItems.resetMenu()
-        self.dismiss(animated: true, completion: {})
-        self.navigationController?.popViewController(animated: true)
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginBarView") as! UINavigationController
+        self.present(vc, animated: true, completion: nil)
     }
     
 }

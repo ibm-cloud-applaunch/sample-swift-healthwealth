@@ -119,7 +119,7 @@ class LoginViewController: UIViewController, NVActivityIndicatorViewable {
         }
         // Check whether Prescription Menu is enabled
         if(AppLaunchAdapter.sharedInstance.isPrescriptionMenuEnabled()) {
-            MenuItems.addPrescriptionFeature(name: "Prescriptions")
+            MenuItems.addPrescriptionFeature(name: AppLaunchAdapter.sharedInstance.getPrescriptionMenuTitle())
         }
         // Update Background Color
         if(AppLaunchAdapter.sharedInstance.isBackgroundColorChanged()) {

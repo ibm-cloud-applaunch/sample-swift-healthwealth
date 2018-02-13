@@ -15,6 +15,7 @@
 		C75E995A200DEEB50065A76C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E9959200DEEB50065A76C /* LoginViewController.swift */; };
 		C75E995D200DEEB50065A76C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75E995B200DEEB50065A76C /* Main.storyboard */; };
 		C75E9962200DEEB50065A76C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75E9960200DEEB50065A76C /* LaunchScreen.storyboard */; };
+		C766A599203166E1004E12B1 /* ICCredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = C766A598203166E1004E12B1 /* ICCredentials.plist */; };
 		C770205620298A26009C7CB5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C770205520298A26009C7CB5 /* MapKit.framework */; };
 		C78420FC202856EB00E26519 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78420FB202856EB00E26519 /* MapViewController.swift */; };
 		C78420FE202856FC00E26519 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78420FD202856FC00E26519 /* FormViewController.swift */; };
@@ -42,6 +43,7 @@
 		C75E995C200DEEB50065A76C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C75E9961200DEEB50065A76C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C75E9963200DEEB50065A76C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C766A598203166E1004E12B1 /* ICCredentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ICCredentials.plist; sourceTree = "<group>"; };
 		C770205520298A26009C7CB5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C78420FB202856EB00E26519 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C78420FD202856FC00E26519 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				C75E995B200DEEB50065A76C /* Main.storyboard */,
 				C75E9960200DEEB50065A76C /* LaunchScreen.storyboard */,
 				C75E9963200DEEB50065A76C /* Info.plist */,
+				C766A598203166E1004E12B1 /* ICCredentials.plist */,
 				C7934E6320107999005892EE /* Images.xcassets */,
 			);
 			path = HealthWealth;
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C75E9962200DEEB50065A76C /* LaunchScreen.storyboard in Resources */,
+				C766A599203166E1004E12B1 /* ICCredentials.plist in Resources */,
 				C7934E622010798E005892EE /* CustomOverlayView.xib in Resources */,
 				C7934E6420107999005892EE /* Images.xcassets in Resources */,
 				C75E995D200DEEB50065A76C /* Main.storyboard in Resources */,

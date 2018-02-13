@@ -16,12 +16,12 @@ internal class AppLaunchAdapter {
     internal func initialize(username: String, userType: String, completionHandler: @escaping AppLaunchCompletionHandler) {
         let config = AppLaunchConfig.Builder().fetchPolicy(.REFRESH_ON_EVERY_START).cacheExpiration(1).eventFlushInterval(100).build()
         let user = AppLaunchUser.Builder(userId: username).custom(key: "type", value: userType).build()
-        AppLaunch.sharedInstance.initialize(region: .US_SOUTH, appId: "e5fa93b0-4d0a-4e17-bc91-1189091a9341", clientSecret: "e58862fb-9074-4506-a16d-333c3ab5fabb", config: config, user: user, completionHandler: completionHandler)
+        AppLaunch.sharedInstance.initialize(region: .US_SOUTH, appId: "1e22e2af-4b02-47a8-b2f0-863fbc833da1", clientSecret: "f9c6a74f-c0f3-4ab6-b1d2-bfa004aa07a9", config: config, user: user, completionHandler: completionHandler)
     }
     
     internal func isOnlineEyeTestMenuEnabled() -> Bool {
         do {
-            return try AppLaunch.sharedInstance.isFeatureEnabled(featureCode: "_l9bblng5t")
+            return try AppLaunch.sharedInstance.isFeatureEnabled(featureCode: "_a2nqtg2g6")
         } catch {
             return false
         }
@@ -29,35 +29,35 @@ internal class AppLaunchAdapter {
     
     internal func getOnlineEyeTestMenuTitle() -> String {
         do {
-            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_l9bblng5t", propertyCode: "_itchy2x3m")
+            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_a2nqtg2g6", propertyCode: "_lpvaa580p")
         } catch {
-            return ""
+            return "Online Eye Clinic"
         }
     }
     
     internal func getOnlineEyeTestMenuHeader() -> String {
         do {
-            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_l9bblng5t", propertyCode: "_itchy2x3m")
+            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_a2nqtg2g6", propertyCode: "_l84ebkywk")
         } catch {
-            return ""
+            return "Examine my Eye"
         }
     }
     
     internal func getOnlineEyeTestButtonTitle() -> String {
         do {
-            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_l9bblng5t", propertyCode: "_itchy2x3m")
+            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_a2nqtg2g6", propertyCode: "_e92o5okpy")
         } catch {
-            return ""
+            return "Capture"
         }
     }
     
     internal func sendOnlineEyeTestMetric() {
-        AppLaunchAdapter.sharedInstance.sendMetrics(value: "_d2eqdhfu1")
+        AppLaunchAdapter.sharedInstance.sendMetrics(value: "_811rru335")
     }
     
     internal func isSubmissionMenuEnabled() -> Bool {
         do {
-            return try AppLaunch.sharedInstance.isFeatureEnabled(featureCode: "_fffs55wd9")
+            return try AppLaunch.sharedInstance.isFeatureEnabled(featureCode: "_7d6pkh1fi")
         } catch {
             return false
         }
@@ -65,23 +65,23 @@ internal class AppLaunchAdapter {
     
     internal func getSubmissionMenuTitle() -> String {
         do {
-            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_fffs55wd9", propertyCode: "_32t5jp929")
+            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_7d6pkh1fi", propertyCode: "_2z9rib38b")
         } catch {
-            return ""
+            return "Submission"
         }
     }
     
     internal func sendSubmissionMenuPostiveMetric() {
-        AppLaunchAdapter.sharedInstance.sendMetrics(value: "_d2eqdhfu1")
+        AppLaunchAdapter.sharedInstance.sendMetrics(value: "_95d3kddtl")
     }
     
     internal func sendSubmissionMenuNegativeMetric() {
-        AppLaunchAdapter.sharedInstance.sendMetrics(value: "_d2eqdhfu1")
+        AppLaunchAdapter.sharedInstance.sendMetrics(value: "_4ks4z3u32")
     }
     
     internal func isPrescriptionMenuEnabled() -> Bool {
         do {
-            return try AppLaunch.sharedInstance.isFeatureEnabled(featureCode: "_5gavnnrf5")
+            return try AppLaunch.sharedInstance.isFeatureEnabled(featureCode: "_obm2z42ym")
         } catch {
             return false
         }
@@ -89,27 +89,27 @@ internal class AppLaunchAdapter {
     
     internal func getPrescriptionMenuTitle() -> String {
         do {
-            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_5gavnnrf5", propertyCode: "_pqec8f33u")
+            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_obm2z42ym", propertyCode: "_r2kbuapvd")
         } catch {
-            return ""
+            return "Prescription"
         }
     }
     
     internal func getPrescriptionMenuType() -> String {
         do {
-            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_5gavnnrf5", propertyCode: "_pqec8f33u")
+            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_obm2z42ym", propertyCode: "_d7u9so40i")
         } catch {
-            return ""
+            return "normalView"
         }
     }
     
     internal func sendPrescriptionMenuMetric() {
-        AppLaunchAdapter.sharedInstance.sendMetrics(value: "_d2eqdhfu1")
+        AppLaunchAdapter.sharedInstance.sendMetrics(value: "_v3vux5y67")
     }
     
     internal func isBackgroundColorChanged() -> Bool {
         do {
-            return try AppLaunch.sharedInstance.isFeatureEnabled(featureCode: "_u6tm9txnw")
+            return try AppLaunch.sharedInstance.isFeatureEnabled(featureCode: "_13tnalkik")
         } catch {
             return false
         }
@@ -117,7 +117,7 @@ internal class AppLaunchAdapter {
     
     internal func getBackGroundColor() -> String {
         do {
-            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_u6tm9txnw", propertyCode: "_x2ctz0pha")
+            return try AppLaunch.sharedInstance.getPropertyofFeature(featureCode: "_13tnalkik", propertyCode: "_04rqh3vzs")
         } catch {
             return "#FEC058"
         }

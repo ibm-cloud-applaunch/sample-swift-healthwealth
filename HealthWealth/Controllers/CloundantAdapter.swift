@@ -12,11 +12,28 @@ import SwiftCloudant
 
 internal class CloudantAdapter {
     internal static var sharedInstance = CloudantAdapter()
+    internal var client:CouchDBClient
+    internal var dbName:String
+    internal var cloudantusername:String?
+    internal var cloudantpassword:String?
+    internal var cloudantURL:String?
+    internal var cloudantName:String?
     
     var images:[UIImage] = [UIImage]()
     
-    let client = CouchDBClient(url: URL(string:"https://5bf42439-5b18-4464-bbfb-4f38f16fcbea-bluemix:3218ea08dfb0870b61c00eb88fa73e2e0236f75bd5e215bc27a62ff1405b1077@5bf42439-5b18-4464-bbfb-4f38f16fcbea-bluemix.cloudant.com")!, username:"5bf42439-5b18-4464-bbfb-4f38f16fcbea-bluemix", password:"3218ea08dfb0870b61c00eb88fa73e2e0236f75bd5e215bc27a62ff1405b1077")
-    let dbName = "healthwealth"
+    init() {
+        if let contents = Bundle.main.path(forResource:"ICCredentials", ofType: "plist"), let dictionary = NSDictionary(contentsOfFile: contents) {
+            self.cloudantusername = dictionary["cloudantUserID"] as? String
+            self.cloudantpassword = dictionary["cloundantPassword"] as? String
+            self.cloudantURL = dictionary["cloundantURL"] as? String
+            self.cloudantName = (dictionary["dbName"] as? String)!
+            
+        }
+        self.dbName = cloudantName!
+        self.client = CouchDBClient(url: URL(string: cloudantURL!)!, username: cloudantusername, password: cloudantpassword)
+    }
+   
+  
     
     internal func createDocument(_ documentID: String,_ completionHandler:@escaping ((Bool) -> Void)) {
         let create = PutDocumentOperation(id: documentID, revision: nil, body: [:], databaseName: dbName) {(response, httpInfo, error) in
@@ -84,7 +101,7 @@ internal class CloudantAdapter {
     
     
     internal func isDoctor(_ username: String,_ completionHandler:@escaping ((Bool) -> Void)) {
-        let readID = GetDocumentOperation(id: "Doctors", databaseName: dbName) { (response, httpInfo, error) in
+        let readID = GetDocumentOperation(id: "doctors", databaseName: dbName) { (response, httpInfo, error) in
             if let error = error {
                 print("Encountered an error while deleting a document. Error: \(error)")
                 completionHandler(false)
